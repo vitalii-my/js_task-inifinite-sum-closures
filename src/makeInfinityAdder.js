@@ -5,7 +5,7 @@
  */
 function makeInfinityAdder() {
   let numberSum = 0;
-
+  
   const adder = (number) => {
     /*  if (typeof number === 'number') {
        numberSum += number;
@@ -14,8 +14,9 @@ function makeInfinityAdder() {
      result = numberSum;
      numberSum = 0;
      } */
-    let result = typeof number === 'number' ? adder : numberSum;
-    numberSum = typeof number === 'number' ? numberSum + number : 0;
+    const result = typeof number === 'number' ? adder : numberSum;
+
+    numberSum = (numberSum + number) || 0;
 
     return result;
   };
